@@ -31,11 +31,10 @@
 rm(list = ls())
 library(ancom.R)
 library(metagenomeSeq)
-source("/Users/zhouchao/Documents/Tree/OTU/Rcode/Tree_ratio.R")
-source("/Users/zhouchao/Documents/Tree/OTU/Rcode/Tree_ratio_back.R")
-source("/Users/zhouchao/Documents/Tree/OTU/Rcode/Taxa_index.R")
-source("/Users/zhouchao/Documents/Tree/OTU/Rcode/Zig_pv.R")
-source("/Users/zhouchao/Documents/Tree/OTU/Rcode/pow.fdr.R")
+source("~/Rcode/Tree.ratio.R")
+source("~/Rcode/Taxa.index.R")
+source("~/Rcode/Zig.pv.R")
+source("~Rcode/pow.fdr.R")
 
 sim.types <- c("BIT", "DTM", "LNM", "ANCOM")
 otu.numbers <- c(50, 100, 200, 500)
@@ -45,7 +44,7 @@ start <- Sys.time()
 for(o in 1:length(otu.numbers)){
   p <- otu.numbers[o]
   R <- ifelse(p == 500, 30, 50)       # for big p(500) only replicate 30 times
-  path.p <- paste0("/Users/zhouchao/Documents/Tree/OTU/Trees/p=", p, "/")
+  path.p <- paste0("~/p=", p, "/")
 
   #PowFdr.Sumtree <- matrix(0, 2*length(sim.types), 5)
   for(t in 1:tree.numbers){
@@ -154,7 +153,7 @@ R <- 10   # choose 10 data to do this
 start <- Sys.time()
 for(o in 1:length(otu.numbers)){
   p <- otu.numbers[o]
-  path.p <- paste0("/Users/zhouchao/Documents/Tree/OTU/Trees/p=", p, "/")
+  path.p <- paste0("~/p=", p, "/")
 
   FWER.Sumtree <- matrix(0, length(sim.types), 5)
   for(t in 1:tree.numbers){
@@ -247,7 +246,7 @@ Sys.time() - start
 start <- Sys.time()
 for(o in 1:length(otu.numbers)){
   p <- otu.numbers[o]
-  path.p <- paste0("/Users/zhouchao/Documents/Tree/OTU/Trees/p=", p, "/")
+  path.p <- paste0("~/p=", p, "/")
   for(t in 1:tree.numbers){
     for(s in 1:length(sim.types)){
       type <- sim.types[s]
