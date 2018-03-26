@@ -1,5 +1,5 @@
-# Tree.Ratio
-Differential Abundance Analysis for Microbiome Incorporating Phylogeny
+## Tree.Ratio
+Differential Abundance Analysis for Microbiome data Incorporating Phylogeny
 
 ## Installation
 
