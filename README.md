@@ -36,9 +36,9 @@ devtools::install_github("ZRChao/LTRR")
 
 ### Example
  
-#You can see this in real data application of throat.R or gut.R
+#You can see this in real data application of throat.R 
 ```R
-ibrary(MiSPU)
+library(MiSPU)
 load(throat.otu.tab)
 load(throat.tree)
 load(throat.meta)
