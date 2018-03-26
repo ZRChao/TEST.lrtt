@@ -36,5 +36,18 @@ devtools::install_github("ZRChao/LTRR")
 
 ### Example
  
- You can see this in real data application of throat.R or gut.R
+#You can see this in real data application of throat.R or gut.R
+```R
+ibrary(MiSPU)
+load(throat.otu.tab)
+load(throat.tree)
+load(throat.meta)
 
+p = ncol(throat.otu.tab)
+throat.taxa.index <- Taxa.index(p, throat.tree)
+throat.alltab <- cbind(throat.taxa.index*throat.otu.tab,  throat.otu.tab)
+group <- throat.meta$SmokingState)
+
+result <- Tree.Ratio(p, throat.tree, throat.taxa.index, throat.alltab, group)
+throat.detected <- Tree.Ratio.back(p, throat.tree, throat.taxa.index, results, group)
+```
